@@ -1,0 +1,16 @@
+import random
+import string
+
+
+user_input = range(int(input('How many EC2 instances do you want names for? ')))
+source = string.ascii_uppercase + string.digits
+
+department_name = input('What is the name of the department you want in the EC2 name? ')
+
+print('Your unique EC2 instance names are: ')
+
+randomized_name = (department_name + ''.join((random.choice(source) for i in range(5))))
+for i in user_input:
+    print(randomized_name) 
+    randomized_name = (department_name + ''.join((random.choice(source) for i in range(5))))
+    
